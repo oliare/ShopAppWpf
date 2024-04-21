@@ -1,0 +1,41 @@
+﻿<Window x:Class="ShopAppWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopAppWpf"
+        mc:Ignorable="d" Background="AliceBlue"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Padding" Value="10,5,10,5"/>
+            <Setter Property="Grid.Row" Value="1"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="5" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label FontWeight="Bold" Content="* SHOP MANAGER *" Grid.ColumnSpan="3" Height="30" HorizontalAlignment="Center" FontSize="14"/>
+
+        <Button Click="viewShopsBtn_Click" Grid.Column="0" Content="View shops"/>
+        <Button Click="viewWorkersBtn_Click" Grid.Column="1" Content="View workers"/>
+        <Button Click="viewProductsBtn_Click" Grid.Column="2" Content="View products"/>
+
+        <DataGrid x:Name="grid" Grid.ColumnSpan="3"  Margin="10" Grid.Row="2" Grid.RowSpan="2"/>
+    </Grid>
+</Window>
